@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Event Registration System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">EventHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Header -->
+    <section class="events-header">
+        <div class="container">
+            <div class="events-header-content">
+                <h1>Discover Events</h1>
+                <p>Find and register for upcoming events that match your interests</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Filter Section -->
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search events..." id="search-input">
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="technology">Technology</option>
+                            <option value="business">Business</option>
+                            <option value="education">Education</option>
+                            <option value="arts">Arts & Culture</option>
+                            <option value="health">Health & Wellness</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date</label>
+                        <select id="date-filter">
+                            <option value="all">Any Date</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price</label>
+                        <select id="price-filter">
+                            <option value="all">Any Price</option>
+                            <option value="free">Free</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary filter-button" id="apply-filters">
+                    <i class="fas fa-filter"></i> Apply Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-list">
+        <div class="container">
+            <div class="events-grid" id="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card" data-category="technology" data-price="paid">
+                    <div class="event-image">
+                        <img src="images/event1.svg" alt="Tech Conference">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">JUN</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Technology</div>
+                        <h3>Tech Innovation Summit</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Convention Center, Hall A</p>
+                            <p><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                        </div>
+                        <p class="event-description">Join industry leaders to explore the latest technological innovations and future trends.</p>
+                        <div class="event-footer">
+                            <span class="event-price">$99</span>
+                            <a href="event-details.html?id=1" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card" data-category="technology" data-price="free">
+                    <div class="event-image">
+                        <img src="images/event2.svg" alt="Workshop">
+                        <div class="event-date">
+                            <span class="day">22</span>
+                            <span class="month">JUN</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Technology</div>
+                        <h3>Web Development Workshop</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Tech Hub, Room 204</p>
+                            <p><i class="fas fa-clock"></i> 10:00 AM - 3:00 PM</p>
+                        </div>
+                        <p class="event-description">Hands-on workshop covering modern web development frameworks and best practices.</p>
+                        <div class="event-footer">
+                            <span class="event-price free">Free</span>
+                            <a href="event-details.html?id=2" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card" data-category="business" data-price="paid">
+                    <div class="event-image">
+                        <img src="images/event3.svg" alt="Networking Event">
+                        <div class="event-date">
+                            <span class="day">30</span>
+                            <span class="month">JUN</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Business</div>
+                        <h3>Business Networking Mixer</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Grand Hotel, Ballroom</p>
+                            <p><i class="fas fa-clock"></i> 6:00 PM - 9:00 PM</p>
+                        </div>
+                        <p class="event-description">Connect with professionals from various industries in a relaxed networking environment.</p>
+                        <div class="event-footer">
+                            <span class="event-price">$25</span>
+                            <a href="event-details.html?id=3" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card" data-category="education" data-price="paid">
+                    <div class="event-image">
+                        <img src="images/event4.svg" alt="Education Conference">
+                        <div class="event-date">
+                            <span class="day">05</span>
+                            <span class="month">JUL</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Education</div>
+                        <h3>Education Innovation Conference</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> University Center</p>
+                            <p><i class="fas fa-clock"></i> 9:00 AM - 4:00 PM</p>
+                        </div>
+                        <p class="event-description">Explore the future of education with leading experts and educators from around the world.</p>
+                        <div class="event-footer">
+                            <span class="event-price">$75</span>
+                            <a href="event-details.html?id=4" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card" data-category="arts" data-price="free">
+                    <div class="event-image">
+                        <img src="images/event5.svg" alt="Art Exhibition">
+                        <div class="event-date">
+                            <span class="day">12</span>
+                            <span class="month">JUL</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Arts & Culture</div>
+                        <h3>Contemporary Art Exhibition</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> City Art Gallery</p>
+                            <p><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</p>
+                        </div>
+                        <p class="event-description">Experience a stunning collection of contemporary art from emerging and established artists.</p>
+                        <div class="event-footer">
+                            <span class="event-price free">Free</span>
+                            <a href="event-details.html?id=5" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 -->
+                <div class="event-card" data-category="health" data-price="paid">
+                    <div class="event-image">
+                        <img src="images/event6.svg" alt="Wellness Workshop">
+                        <div class="event-date">
+                            <span class="day">18</span>
+                            <span class="month">JUL</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category">Health & Wellness</div>
+                        <h3>Mindfulness & Wellness Retreat</h3>
+                        <div class="event-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Serenity Wellness Center</p>
+                            <p><i class="fas fa-clock"></i> 9:00 AM - 3:00 PM</p>
+                        </div>
+                        <p class="event-description">A day of mindfulness practices, yoga, and wellness workshops to rejuvenate your mind and body.</p>
+                        <div class="event-footer">
+                            <span class="event-price">$50</span>
+                            <a href="event-details.html?id=6" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No events found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+                <button class="btn btn-outline" id="reset-filters">Reset Filters</button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-btn">10</button>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive updates on new events</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>EventHub</h2>
+                    <p>Your one-stop platform for event registration and management.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>For Users</h3>
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="#">My Tickets</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const searchInput = document.getElementById('search-input');
+            const categoryFilter = document.getElementById('category-filter');
+            const dateFilter = document.getElementById('date-filter');
+            const priceFilter = document.getElementById('price-filter');
+            const applyFiltersBtn = document.getElementById('apply-filters');
+            const resetFiltersBtn = document.getElementById('reset-filters');
+            const eventsGrid = document.getElementById('events-grid');
+            const noResults = document.getElementById('no-results');
+            const eventCards = document.querySelectorAll('.event-card');
+            
+            // Apply filters
+            applyFiltersBtn.addEventListener('click', filterEvents);
+            
+            // Reset filters
+            resetFiltersBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                categoryFilter.value = 'all';
+                dateFilter.value = 'all';
+                priceFilter.value = 'all';
+                filterEvents();
+            });
+            
+            // Filter events based on criteria
+            function filterEvents() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const price = priceFilter.value;
+                
+                let visibleCount = 0;
+                
+                eventCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    const cardPrice = card.dataset.price;
+                    const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                    const cardDescription = card.querySelector('.event-description').textContent.toLowerCase();
+                    
+                    // Check if card matches all filters
+                    const matchesSearch = searchTerm === '' || 
+                                         cardTitle.includes(searchTerm) || 
+                                         cardDescription.includes(searchTerm);
+                    
+                    const matchesCategory = category === 'all' || cardCategory === category;
+                    const matchesPrice = price === 'all' || cardPrice === price;
+                    
+                    // Show/hide card based on filter matches
+                    if (matchesSearch && matchesCategory && matchesPrice) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                if (visibleCount === 0) {
+                    noResults.style.display = 'flex';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            // Pagination functionality
+            const paginationButtons = document.querySelectorAll('.pagination-btn');
+            
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.disabled || this.classList.contains('active')) return;
+                    
+                    // Update active button
+                    document.querySelector('.pagination-btn.active')?.classList.remove('active');
+                    this.classList.add('active');
+                    
+                    // In a real app, this would load the next page of events
+                    // For demo, we'll just scroll to top
+                    window.scrollTo({
+                        top: document.querySelector('.events-header').offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

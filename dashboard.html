@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Event Registration System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">EventHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <div class="user-dropdown">
+                    <button class="user-dropdown-btn">
+                        <img src="images/user-avatar.svg" alt="User Avatar" class="user-avatar">
+                        <span>John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-dropdown-content">
+                        <a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="tickets.html"><i class="fas fa-ticket-alt"></i> My Tickets</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <div class="dashboard-sidebar">
+                    <div class="user-info">
+                        <img src="images/user-avatar.svg" alt="User Avatar" class="user-avatar-large">
+                        <h3>John Doe</h3>
+                        <p>john.doe@example.com</p>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="dashboard.html">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="my-events.html">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>My Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tickets.html">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>My Tickets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="notifications.html">
+                                <i class="fas fa-bell"></i>
+                                <span>Notifications</span>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="settings.html">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="logout-link">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="dashboard-main">
+                    <div class="dashboard-header">
+                        <h1>Dashboard</h1>
+                        <div class="dashboard-actions">
+                            <div class="search-box">
+                                <input type="text" placeholder="Search events...">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <a href="events.html" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Browse Events
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Overview -->
+                    <div class="dashboard-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>3</h3>
+                                <p>Registered Events</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>5</h3>
+                                <p>Available Tickets</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>2</h3>
+                                <p>Upcoming Events</p>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="overview-info">
+                                <h3>1</h3>
+                                <p>Past Events</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="dashboard-section-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="my-events.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="event-cards">
+                        <div class="event-card">
+                            <div class="event-card-header">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">JUN</span>
+                                </div>
+                                <div class="event-status confirmed">Confirmed</div>
+                            </div>
+                            <div class="event-card-body">
+                                <h3 class="event-title">Tech Innovation Summit</h3>
+                                <div class="event-details">
+                                    <p><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Convention Center, Hall A</p>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="event-details.html?id=1" class="btn btn-sm btn-outline">View Details</a>
+                                    <a href="tickets.html?id=1" class="btn btn-sm btn-primary">View Ticket</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-card-header">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">JUN</span>
+                                </div>
+                                <div class="event-status confirmed">Confirmed</div>
+                            </div>
+                            <div class="event-card-body">
+                                <h3 class="event-title">Web Development Workshop</h3>
+                                <div class="event-details">
+                                    <p><i class="fas fa-clock"></i> 10:00 AM - 3:00 PM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Tech Hub, Room 201</p>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="event-details.html?id=2" class="btn btn-sm btn-outline">View Details</a>
+                                    <a href="tickets.html?id=2" class="btn btn-sm btn-primary">View Ticket</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-section-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Ticket Confirmed</h4>
+                                <p>Your ticket for <strong>Tech Innovation Summit</strong> has been confirmed.</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Event Registration</h4>
+                                <p>You registered for <strong>Web Development Workshop</strong>.</p>
+                                <span class="activity-time">5 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Payment Completed</h4>
+                                <p>Payment of <strong>$99.00</strong> for Tech Innovation Summit was successful.</p>
+                                <span class="activity-time">5 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Profile Updated</h4>
+                                <p>You updated your profile information.</p>
+                                <span class="activity-time">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Events -->
+                    <div class="dashboard-section-header">
+                        <h2>Recommended Events</h2>
+                        <a href="events.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="recommended-events">
+                        <div class="recommended-event">
+                            <img src="images/event3.svg" alt="Marketing Masterclass">
+                            <div class="recommended-event-info">
+                                <div class="event-category">Marketing</div>
+                                <h3>Digital Marketing Masterclass</h3>
+                                <p><i class="fas fa-calendar-alt"></i> June 28, 2023</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Business Center</p>
+                                <div class="event-price">$75</div>
+                                <a href="event-details.html?id=3" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="recommended-event">
+                            <img src="images/event4.svg" alt="Education Innovation Conference">
+                            <div class="recommended-event-info">
+                                <div class="event-category">Education</div>
+                                <h3>Education Innovation Conference</h3>
+                                <p><i class="fas fa-calendar-alt"></i> July 5, 2023</p>
+                                <p><i class="fas fa-map-marker-alt"></i> University Campus</p>
+                                <div class="event-price">$50</div>
+                                <a href="event-details.html?id=4" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+
+                        <div class="recommended-event">
+                            <img src="images/event5.svg" alt="Startup Networking Mixer">
+                            <div class="recommended-event-info">
+                                <div class="event-category">Networking</div>
+                                <h3>Startup Networking Mixer</h3>
+                                <p><i class="fas fa-calendar-alt"></i> July 12, 2023</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Innovation Hub</p>
+                                <div class="event-price free">Free</div>
+                                <a href="event-details.html?id=5" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>EventHub</h2>
+                    <p>Your one-stop platform for event registration and management.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>For Users</h3>
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="tickets.html">My Tickets</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User dropdown toggle
+            const userDropdownBtn = document.querySelector('.user-dropdown-btn');
+            const userDropdownContent = document.querySelector('.user-dropdown-content');
+            
+            userDropdownBtn.addEventListener('click', function() {
+                userDropdownContent.classList.toggle('show');
+            });
+            
+            // Close dropdown when clicking outside
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.user-dropdown-btn') && 
+                    !e.target.matches('.user-dropdown-btn *')) {
+                    if (userDropdownContent.classList.contains('show')) {
+                        userDropdownContent.classList.remove('show');
+                    }
+                }
+            });
+            
+            // Mobile sidebar toggle
+            const hamburger = document.querySelector('.hamburger');
+            const dashboardSidebar = document.querySelector('.dashboard-sidebar');
+            
+            hamburger.addEventListener('click', function() {
+                dashboardSidebar.classList.toggle('show-sidebar');
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
